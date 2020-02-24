@@ -12,7 +12,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'production',
   entry: {
-    app: ['core-js', './src/entry'],
+    app: ['./src/entry'],
   },
   module: {
     rules: [
