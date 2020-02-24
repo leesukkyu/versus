@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noLib": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@Route/*": ["src/route/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Modules/*": ["src/store/modules/*"],
+      "@Components/*": ["src/components/*"],
+      "@Style/*": ["public/scss/*"],
+      "@Public/*": ["public/*"],
+      "@Config/*": ["src/config/*"],
+      "@Json/*": ["src/json/*"],
+      "@Stores/*": ["src/store/stores/*"]
+    }
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules"]
+}
