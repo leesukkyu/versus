@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '@Components/App';
+import Root from '@/components/Root';
 import { setRequestInterceptor, setResponseInterceptor } from '@/http';
 
 import { Provider } from 'mobx-react';
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 
 ReactDOM.render(
     <Provider store={rootStore}>
-        <App />
-    </Provider>
+        <Root />
+    </Provider>,
     document.getElementById('root'),
 );

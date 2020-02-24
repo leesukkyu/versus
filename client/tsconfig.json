@@ -13,13 +13,12 @@
       "@/*": ["src/*"],
       "@Route/*": ["src/route/*"],
       "@Pages/*": ["src/pages/*"],
-      "@Modules/*": ["src/store/stores/*"],
       "@Components/*": ["src/components/*"],
       "@Style/*": ["public/scss/*"],
       "@Public/*": ["public/*"],
       "@Config/*": ["src/config/*"],
       "@Json/*": ["src/json/*"],
-      "@Stores/*": ["src/store/modules/*"]
+      "@Stores/*": ["src/store/stores/*"]
     }
   },
   "compileOnSave": false,

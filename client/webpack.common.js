@@ -74,7 +74,6 @@ module.exports = {
       '@': path.resolve(__dirname, 'src/'),
       '@Route': path.resolve(__dirname, 'src/route/'),
       '@Pages': path.resolve(__dirname, 'src/pages/'),
-      '@Modules': path.resolve(__dirname, 'src/store/modules/'),
       '@Components': path.resolve(__dirname, 'src/components/'),
       '@Style': path.resolve(__dirname, 'public/scss/'),
       '@Public': path.resolve(__dirname, 'public/'),
