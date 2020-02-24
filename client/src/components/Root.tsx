@@ -1,5 +1,5 @@
 import React from 'react';
-import Router from '@Route/CustomRouter';
+import Router from '@Route/CustomRoute';
 import LoadingAnimation from '@Components/loadingAnimation/LoadingAnimation';
 
 const Root = () => (

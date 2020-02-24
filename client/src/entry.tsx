@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 ReactDOM.render(
-    <Provider store={rootStore}>
+    <Provider {...rootStore} rootStore={rootStore}>
         <Root />
     </Provider>,
     document.getElementById('root'),

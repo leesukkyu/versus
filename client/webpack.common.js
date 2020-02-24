@@ -26,7 +26,7 @@ module.exports = {
     path: `${__dirname}/build`,
     filename: `bundle.${version}.js`,
     chunkFilename: `chunks/[name].${version}.chunks.js`,
-    publicPath: '/',
+    publicPath: './',
   },
   module: {
     rules: [
@@ -57,7 +57,7 @@ module.exports = {
     new CleanWebpackPlugin(), // 폴더 클린
     // 기본 확장 템플릿
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: `${__dirname}/src/public/index.html`,
     }),
     // 다국어 설정
     new I18nPlugin(COMPILE_LANGUAGE_FILE, {

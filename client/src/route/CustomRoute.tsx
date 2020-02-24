@@ -1,9 +1,9 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import { createBrowserHistory, createHashHistory } from "history";
 
 import NoMatch from '@Pages/NoMatch';
 import Index from '@Pages/Index';
-
 import Main from '@Pages/main/Main';
 
 import userStoreTypes, { tokenTypes } from '@Stores/UserStore';
@@ -38,8 +38,8 @@ const PrivateRoute = ({ component: Component, token, ...rest }) => (
 
 // 오픈 라우트
 const CustomRoute = inject('userStore')(
-  observer((props: { userStore: userStoreTypes }) => (
-    <Switch>
+  observer((props: { userStore?: userStoreTypes }) => (
+    <Router history={createBrowserHistory()}>
       {/* 인덱스에서 처리해야 할 라우터들 */}
       <Route
         path={[
@@ -55,7 +55,7 @@ const CustomRoute = inject('userStore')(
       {/* 보안 처리 해야 할 라우터들 */}
       <PrivateRoute path="/main" component={Main} token={props.userStore.token} />
       <Route component={NoMatch} />
-    </Switch>
+    </Router>
   )),
 );
 
