@@ -1,4 +1,5 @@
 import express from 'express';
+import { databaseConnect } from './db';
 var createError = require("http-errors");
 var cors = require("cors");
 var path = require("path");
@@ -8,7 +9,9 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
-var app = express();
+const app = express();
+
+databaseConnect();
 
 app.use(
   cors({

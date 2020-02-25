@@ -106,3 +106,6 @@ dist
 # local
 .history
 .vscode
+
+#secret file
+ini.ts
