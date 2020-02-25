@@ -1,6 +1,7 @@
 // 로그인 사용자 데이터 스토어
 import { TOKEN } from '@Config/Ini';
 import { observable, action, configure, runInAction, when } from 'mobx';
+import { userTypes } from '@Types/index'
 import http from '@/http';
 
 configure({ enforceActions: 'observed' });
@@ -11,24 +12,6 @@ export interface tokenTypes {
     expiresIn: string;
     refreshToken: string;
     scope: string;
-}
-
-export interface userTypes {
-    id: number;
-    username: string;
-    type: string;
-    name: string;
-    countryCode: string;
-    phone: string;
-    email: string;
-    description: string;
-    picture: null;
-    dateJoined: string;
-    subscription: boolean;
-    subscriptionUpdatedAt: string;
-    thirdPartyConsent: boolean;
-    dateStoreAllowed: string;
-    isStaff: boolean;
 }
 
 class UserStore {

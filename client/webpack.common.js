@@ -79,6 +79,7 @@ module.exports = {
       '@Public': path.resolve(__dirname, 'public/'),
       '@Config': path.resolve(__dirname, 'src/config/'),
       '@Stores': path.resolve(__dirname, 'src/store/stores/'),
+      '@types': path.resolve(__dirname, '../@types/'),
     },
   },
 };

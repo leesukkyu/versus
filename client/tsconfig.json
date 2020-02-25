@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "noLib": false,
     "baseUrl": "./",
+    "typeRoots": ["node_modules/@types"],
     "paths": {
       "@/*": ["src/*"],
       "@Route/*": ["src/route/*"],
@@ -18,7 +19,8 @@
       "@Public/*": ["public/*"],
       "@Config/*": ["src/config/*"],
       "@Json/*": ["src/json/*"],
-      "@Stores/*": ["src/store/stores/*"]
+      "@Stores/*": ["src/store/stores/*"],
+      "@Types/*": ["../@types/*"]
     }
   },
   "compileOnSave": false,
