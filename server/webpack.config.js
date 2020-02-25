@@ -5,7 +5,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(js|ts|tsx)$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -13,11 +13,14 @@ module.exports = {
   },
   devtool: 'source-map',
   target: 'node',
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    extensions: ['.jsx', '.ts', '.tsx', '.js'],
+    alias: {
+      '@Types': path.resolve(__dirname, '../@types/'),
+    },
   },
 };

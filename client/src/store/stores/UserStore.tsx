@@ -1,7 +1,7 @@
 // 로그인 사용자 데이터 스토어
 import { TOKEN } from '@Config/Ini';
 import { observable, action, configure, runInAction, when } from 'mobx';
-import { userTypes } from '@Types/index'
+import UserTypes from '@Types/UserTypes'
 import http from '@/http';
 
 configure({ enforceActions: 'observed' });
@@ -23,7 +23,7 @@ class UserStore {
 
     // 접속 유저 데이터
     @observable
-    user: userTypes = null;
+    user: UserTypes = null;
 
     @observable
     error: boolean = null;
