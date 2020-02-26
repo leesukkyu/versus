@@ -1,7 +1,13 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './server.ts',
+  output: {
+    path: `${__dirname}/build`,
+    filename: `bundle.js`,
+    publicPath: '../',
+  },
   module: {
     rules: [
       {
@@ -11,12 +17,12 @@ module.exports = {
       },
     ],
   },
+  node: {
+    __dirname: true,
+  },
+  externals: [nodeExternals()],
   devtool: 'source-map',
   target: 'node',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   resolve: {
     extensions: ['.jsx', '.ts', '.tsx', '.js'],
     alias: {
