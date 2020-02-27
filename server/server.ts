@@ -9,7 +9,6 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var apiRouter = require("./routes/api/api");
-var ejs = require('ejs');
 const app = express();
 
 // database connect

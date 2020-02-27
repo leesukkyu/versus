@@ -10,6 +10,9 @@ const UserSchema = new Schema({
         unique: true
     },
     pw: String,
+    phone: String,
+    interestFieldIdList: Array,
+    teamIdList: Array,
 });
 
 export default model<UserTypesModel>('User', UserSchema);
