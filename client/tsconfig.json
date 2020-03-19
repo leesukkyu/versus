@@ -1,28 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "jsx": "react",
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "allowJs": true,
-    "skipLibCheck": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "noLib": false,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "experimentalDecorators": true,
     "baseUrl": "./",
-    "typeRoots": ["node_modules/@types"],
     "paths": {
-      "@/*": ["src/*"],
-      "@Route/*": ["src/route/*"],
-      "@Pages/*": ["src/pages/*"],
-      "@Components/*": ["src/components/*"],
-      "@Style/*": ["public/scss/*"],
-      "@Public/*": ["public/*"],
-      "@Config/*": ["src/config/*"],
-      "@Json/*": ["src/json/*"],
+      "@Store/*": ["src/store/*"],
       "@Stores/*": ["src/store/stores/*"],
-      "@Types/*": ["../@types/*"]
+      "@Lib/*": ["src/lib/*"],
+      "@Components/*": ["src/components/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Types/*": ["src/@types/*"],
+      "@Images/*": ["src/public/images/*"],
+      "@Styles/*": ["src/public/styles/*"]
     }
-  },
-  "compileOnSave": false,
-  "exclude": ["node_modules"]
+  }
 }

@@ -1,0 +1,83 @@
+@import '@Styles/var.scss';
+
+.progressbar-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 4px;
+  background: $azul;
+  z-index: 99999;
+  opacity: 0.8;
+  display: none;
+
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    overflow-x: hidden;
+  }
+
+  .sub-line {
+    position: absolute;
+    height: 4px;
+  }
+
+  .sub-line-1 {
+    opacity: 0.8;
+    background: $butterscotch;
+    animation: line1 2s infinite;
+  }
+
+  .sub-line-2 {
+    opacity: 0.8;
+    background: $slate-grey;
+    animation: line2 2s 0.5s infinite;
+  }
+
+  @keyframes line1 {
+    from {
+      left: -5%;
+      width: 5%;
+    }
+
+    to {
+      left: 130%;
+      width: 100%;
+    }
+  }
+
+  @keyframes line2 {
+    from {
+      left: -80%;
+      width: 80%;
+    }
+
+    to {
+      left: 110%;
+      width: 10%;
+    }
+  }
+
+  &.progressbar-enter {
+    display: block;
+    opacity: 0.01;
+  }
+
+  &.progressbar-enter.progressbar-enter-active {
+    display: block;
+    opacity: 1;
+    transition: opacity 1500ms ease-in;
+  }
+
+  &.progressbar-exit {
+    display: block;
+    opacity: 1;
+  }
+
+  &.progressbar-exit.progressbar-exit-active {
+    display: block;
+    opacity: 0.01;
+    transition: opacity 1500ms ease-in;
+  }
+}

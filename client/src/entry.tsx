@@ -1,39 +1,24 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from '@/components/Root';
-import { setRequestInterceptor, setResponseInterceptor } from '@/http';
 
 import { Provider } from 'mobx-react';
+import RootStore from '@Store/rootStore';
 
-import RootStore from '@/store/RootStore';
+import moment from 'moment';
 
-const rootStore = new RootStore();
+import App from './App';
 
-// 서버 요청 전처리
-setRequestInterceptor((data) => {
-    const newData = data;
-    rootStore.animationStore.changeProgressbarState(true);
-    if (!newData.headers.Authorization) {
-        newData.headers.Authorization = `Bearer ${rootStore.userStore.token.accessToken}`;
-    }
-    return newData;
+moment.locale('ko', {
+  weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
+  meridiem(hours) {
+    return hours < 12 ? '오전' : '오후';
+  },
 });
-
-// 서버 요청 후처리
-setResponseInterceptor(() => {
-    rootStore.animationStore.changeProgressbarState(false);
-});
-
-// 개발 모드에서는 일단 로컬 스토리지에 데이터를 가지고 시작한다.(발급 토큰이 있다고 판단)
-if (process.env.NODE_ENV === 'development') {
-    rootStore.userStore.setToken({
-        accessToken: localStorage.getItem('accessToken'),
-    });
-}
 
 ReactDOM.render(
-    <Provider {...rootStore} rootStore={rootStore}>
-        <Root />
-    </Provider>,
-    document.getElementById('root'),
+  <Provider {...RootStore} rootStore={RootStore}>
+    <App />
+  </Provider>,
+  document.getElementById('app'),
 );

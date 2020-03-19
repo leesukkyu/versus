@@ -1,37 +1,15 @@
-// 웹팩 설정 파일 - 개발용
-const path = require('path');
-
+/* eslint-disable @typescript-eslint/no-var-requires */
 const merge = require('webpack-merge');
+const path = require('path');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
-  entry: {
-    app: ['./src/entry'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|ts|tsx)$/,
-        include: /(src)/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              configFile: path.resolve('babel.config.js'),
-            },
-          },
-          {
-            loader: 'ts-loader',
-          },
-        ],
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        include: /(src|public)/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-    ],
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    port: 9000,
+    historyApiFallback: true,
+    hot: true,
   },
   devtool: 'source-map',
 });

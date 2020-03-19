@@ -1,17 +1,14 @@
-import UserStore from '@/store/stores/UserStore';
-import AnimationStore from '@/store/stores/AnimationStore';
-import SnackbarStore from './stores/SnackbarStore';
+import AnimationStore from '@Stores/AnimationStore';
+import TestStore from '@Stores/TestStore';
 
 class RootStore {
-    userStore: UserStore;
-    animationStore: AnimationStore;
-    snackbarStore: SnackbarStore;
+  animationStore: AnimationStore;
+  TestStore: TestStore;
 
-    constructor() {
-        this.userStore = new UserStore(this);
-        this.animationStore = new AnimationStore(this);
-        this.snackbarStore = new SnackbarStore(this);
-    }
+  constructor() {
+    this.animationStore = new AnimationStore();
+    this.TestStore = new TestStore();
+  }
 }
 
-export default RootStore;
+export default new RootStore();

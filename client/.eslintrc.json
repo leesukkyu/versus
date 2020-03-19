@@ -3,7 +3,13 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["plugin:prettier/recommended", "airbnb"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier/react",
+    "prettier"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -11,34 +17,21 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true,
-      "experimentalDecorators": true
+      "jsx": true
     },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["import", "react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint"],
   "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
     "import/resolver": {
       "typescript": "./tsconfig.json"
     }
   },
   "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      { "extensions": [".js", ".jsx", "tsx"] }
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "vars": "all",
-        "args": "after-used",
-        "ignoreRestSiblings": false
-      }
-    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
+    "import/no-unresolved": [2, { "ignore": [".png$", ".webp$", ".jpg$"] }],
+    "@typescript-eslint/explicit-function-return-type": 0,
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -47,19 +40,6 @@
         "jsx": "never",
         "ts": "never",
         "tsx": "never"
-      }
-    ],
-    "prefer-destructuring": [
-      "error",
-      {
-        "VariableDeclarator": {
-          "array": false,
-          "object": true
-        },
-        "AssignmentExpression": {
-          "array": false,
-          "object": true
-        }
       }
     ]
   }
