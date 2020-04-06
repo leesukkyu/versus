@@ -39,7 +39,6 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        include: /(src|public)/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],

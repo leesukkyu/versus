@@ -1,31 +1,52 @@
-import React, { Component, SyntheticEvent } from 'react';
+import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { observable } from 'mobx';
+import TestStore from '@Store/stores/TestStore';
+
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+} from '@ant-design/icons';
+
+import Header from './Header';
+import Aside from './Aside';
+
+import './index.scss';
+
+interface IndexProps {
+  TestStore: TestStore;
+}
+
+interface IndexState {
+  collapsed: boolean;
+}
 
 @inject('TestStore')
 @observer
-class Index extends Component {
+class Index extends Component<IndexProps, IndexState> {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      collapsed: false,
+    };
   }
 
   componentDidMount() {}
 
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  };
+
   render() {
-    console.log('랜더 호출');
-    var newName = '10'
     return (
-      <div>
-        index
-        <button
-          onClick={() => {
-            this.props.TestStore.changeNameState('어흥');
-          }}
-        >
-          변경
-          {newName}
-        </button>
+      <div className="index-page-wrap">
+        <Header></Header>
+        <Aside></Aside>
+        <div className="content-wrap">content</div>
       </div>
     );
   }

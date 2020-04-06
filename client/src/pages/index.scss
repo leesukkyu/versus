@@ -1,5 +1,55 @@
 @import '@Styles/var.scss';
-
 .index-page-wrap {
-  
+  // 헤더
+  .header-comp {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2020;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    .header-box {
+      height: 56px;
+      background-color: red;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .header-side-menu-btn {
+        width: 40px;
+        height: 40px;
+      }
+      .header-logo-box {
+        width: 130px;
+        height: 24px;
+        background-color: red;
+      }
+      .header-search-box {
+        flex: 1;
+      }
+      .header-item-end-box {
+        min-width: 250px;
+      }
+    }
+  }
+
+  // 왼쪽 메뉴
+  .aside-comp {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    width: 72px;
+    background-color: blue;
+  }
+
+  // 컨텐츠
+  .content-wrap {
+    display: flex;
+    overflow-y: auto;
+    margin-left: 72px;
+    margin-top: 56px;
+    background-color: #f9f9f9;
+  }
 }

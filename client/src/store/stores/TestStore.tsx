@@ -8,7 +8,7 @@ class AnimationStore {
   name = '이석규';
 
   @action
-  public changeNameState(name: string) {
+  changeNameState(name: string) {
     this.name = name;
   }
 }

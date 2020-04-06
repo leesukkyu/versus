@@ -9,8 +9,21 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    pw: String,
-    phone: String,
+    pw: {
+        type: String,
+        required: true,
+    },
+
+    name : {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
+    phone: {
+        type: String,
+    },
+    
     interestFieldIdList: Array,
     teamIdList: Array,
 });
